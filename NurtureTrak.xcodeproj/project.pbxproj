@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		440EC27E2C756EC40081C5D8 /* NurtureTrakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC27D2C756EC40081C5D8 /* NurtureTrakApp.swift */; };
+		440EC2802C756EC40081C5D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC27F2C756EC40081C5D8 /* ContentView.swift */; };
+		440EC2822C756EC50081C5D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440EC2812C756EC50081C5D8 /* Assets.xcassets */; };
+		440EC2852C756EC50081C5D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440EC2842C756EC50081C5D8 /* Preview Assets.xcassets */; };
+		440EC28F2C756EC50081C5D8 /* NurtureTrakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC28E2C756EC50081C5D8 /* NurtureTrakTests.swift */; };
+		440EC2992C756EC50081C5D8 /* NurtureTrakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC2982C756EC50081C5D8 /* NurtureTrakUITests.swift */; };
+		440EC29B2C756EC50081C5D8 /* NurtureTrakUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC29A2C756EC50081C5D8 /* NurtureTrakUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		440EC28B2C756EC50081C5D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 440EC2722C756EC40081C5D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 440EC2792C756EC40081C5D8;
+			remoteInfo = NurtureTrak;
+		};
+		440EC2952C756EC50081C5D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 440EC2722C756EC40081C5D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 440EC2792C756EC40081C5D8;
+			remoteInfo = NurtureTrak;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		440EC27A2C756EC40081C5D8 /* NurtureTrak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NurtureTrak.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		440EC27D2C756EC40081C5D8 /* NurtureTrakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NurtureTrakApp.swift; sourceTree = "<group>"; };
+		440EC27F2C756EC40081C5D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		440EC2812C756EC50081C5D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		440EC2842C756EC50081C5D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		440EC28A2C756EC50081C5D8 /* NurtureTrakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NurtureTrakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		440EC28E2C756EC50081C5D8 /* NurtureTrakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NurtureTrakTests.swift; sourceTree = "<group>"; };
+		440EC2942C756EC50081C5D8 /* NurtureTrakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NurtureTrakUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		440EC2982C756EC50081C5D8 /* NurtureTrakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NurtureTrakUITests.swift; sourceTree = "<group>"; };
+		440EC29A2C756EC50081C5D8 /* NurtureTrakUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NurtureTrakUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		440EC2772C756EC40081C5D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		440EC2872C756EC50081C5D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		440EC2912C756EC50081C5D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		440EC2712C756EC40081C5D8 = {
+			isa = PBXGroup;
+			children = (
+				440EC27C2C756EC40081C5D8 /* NurtureTrak */,
+				440EC28D2C756EC50081C5D8 /* NurtureTrakTests */,
+				440EC2972C756EC50081C5D8 /* NurtureTrakUITests */,
+				440EC27B2C756EC40081C5D8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		440EC27B2C756EC40081C5D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				440EC27A2C756EC40081C5D8 /* NurtureTrak.app */,
+				440EC28A2C756EC50081C5D8 /* NurtureTrakTests.xctest */,
+				440EC2942C756EC50081C5D8 /* NurtureTrakUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		440EC27C2C756EC40081C5D8 /* NurtureTrak */ = {
+			isa = PBXGroup;
+			children = (
+				440EC27D2C756EC40081C5D8 /* NurtureTrakApp.swift */,
+				440EC27F2C756EC40081C5D8 /* ContentView.swift */,
+				440EC2812C756EC50081C5D8 /* Assets.xcassets */,
+				440EC2832C756EC50081C5D8 /* Preview Content */,
+			);
+			path = NurtureTrak;
+			sourceTree = "<group>";
+		};
+		440EC2832C756EC50081C5D8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				440EC2842C756EC50081C5D8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		440EC28D2C756EC50081C5D8 /* NurtureTrakTests */ = {
+			isa = PBXGroup;
+			children = (
+				440EC28E2C756EC50081C5D8 /* NurtureTrakTests.swift */,
+			);
+			path = NurtureTrakTests;
+			sourceTree = "<group>";
+		};
+		440EC2972C756EC50081C5D8 /* NurtureTrakUITests */ = {
+			isa = PBXGroup;
+			children = (
+				440EC2982C756EC50081C5D8 /* NurtureTrakUITests.swift */,
+				440EC29A2C756EC50081C5D8 /* NurtureTrakUITestsLaunchTests.swift */,
+			);
+			path = NurtureTrakUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		440EC2792C756EC40081C5D8 /* NurtureTrak */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 440EC29E2C756EC50081C5D8 /* Build configuration list for PBXNativeTarget "NurtureTrak" */;
+			buildPhases = (
+				440EC2762C756EC40081C5D8 /* Sources */,
+				440EC2772C756EC40081C5D8 /* Frameworks */,
+				440EC2782C756EC40081C5D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NurtureTrak;
+			productName = NurtureTrak;
+			productReference = 440EC27A2C756EC40081C5D8 /* NurtureTrak.app */;
+			productType = "com.apple.product-type.application";
+		};
+		440EC2892C756EC50081C5D8 /* NurtureTrakTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 440EC2A12C756EC50081C5D8 /* Build configuration list for PBXNativeTarget "NurtureTrakTests" */;
+			buildPhases = (
+				440EC2862C756EC50081C5D8 /* Sources */,
+				440EC2872C756EC50081C5D8 /* Frameworks */,
+				440EC2882C756EC50081C5D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				440EC28C2C756EC50081C5D8 /* PBXTargetDependency */,
+			);
+			name = NurtureTrakTests;
+			productName = NurtureTrakTests;
+			productReference = 440EC28A2C756EC50081C5D8 /* NurtureTrakTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		440EC2932C756EC50081C5D8 /* NurtureTrakUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 440EC2A42C756EC50081C5D8 /* Build configuration list for PBXNativeTarget "NurtureTrakUITests" */;
+			buildPhases = (
+				440EC2902C756EC50081C5D8 /* Sources */,
+				440EC2912C756EC50081C5D8 /* Frameworks */,
+				440EC2922C756EC50081C5D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				440EC2962C756EC50081C5D8 /* PBXTargetDependency */,
+			);
+			name = NurtureTrakUITests;
+			productName = NurtureTrakUITests;
+			productReference = 440EC2942C756EC50081C5D8 /* NurtureTrakUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		440EC2722C756EC40081C5D8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					440EC2792C756EC40081C5D8 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					440EC2892C756EC50081C5D8 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 440EC2792C756EC40081C5D8;
+					};
+					440EC2932C756EC50081C5D8 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 440EC2792C756EC40081C5D8;
+					};
+				};
+			};
+			buildConfigurationList = 440EC2752C756EC40081C5D8 /* Build configuration list for PBXProject "NurtureTrak" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 440EC2712C756EC40081C5D8;
+			productRefGroup = 440EC27B2C756EC40081C5D8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				440EC2792C756EC40081C5D8 /* NurtureTrak */,
+				440EC2892C756EC50081C5D8 /* NurtureTrakTests */,
+				440EC2932C756EC50081C5D8 /* NurtureTrakUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		440EC2782C756EC40081C5D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				440EC2852C756EC50081C5D8 /* Preview Assets.xcassets in Resources */,
+				440EC2822C756EC50081C5D8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		440EC2882C756EC50081C5D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		440EC2922C756EC50081C5D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		440EC2762C756EC40081C5D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				440EC2802C756EC40081C5D8 /* ContentView.swift in Sources */,
+				440EC27E2C756EC40081C5D8 /* NurtureTrakApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		440EC2862C756EC50081C5D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				440EC28F2C756EC50081C5D8 /* NurtureTrakTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		440EC2902C756EC50081C5D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				440EC29B2C756EC50081C5D8 /* NurtureTrakUITestsLaunchTests.swift in Sources */,
+				440EC2992C756EC50081C5D8 /* NurtureTrakUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		440EC28C2C756EC50081C5D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 440EC2792C756EC40081C5D8 /* NurtureTrak */;
+			targetProxy = 440EC28B2C756EC50081C5D8 /* PBXContainerItemProxy */;
+		};
+		440EC2962C756EC50081C5D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 440EC2792C756EC40081C5D8 /* NurtureTrak */;
+			targetProxy = 440EC2952C756EC50081C5D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		440EC29C2C756EC50081C5D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		440EC29D2C756EC50081C5D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		440EC29F2C756EC50081C5D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NurtureTrak/Preview Content\"";
+				DEVELOPMENT_TEAM = K3YB5P2C9R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GVS.NurtureTrak;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		440EC2A02C756EC50081C5D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NurtureTrak/Preview Content\"";
+				DEVELOPMENT_TEAM = K3YB5P2C9R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GVS.NurtureTrak;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		440EC2A22C756EC50081C5D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K3YB5P2C9R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GVS.NurtureTrakTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NurtureTrak.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NurtureTrak";
+			};
+			name = Debug;
+		};
+		440EC2A32C756EC50081C5D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K3YB5P2C9R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GVS.NurtureTrakTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NurtureTrak.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NurtureTrak";
+			};
+			name = Release;
+		};
+		440EC2A52C756EC50081C5D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K3YB5P2C9R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GVS.NurtureTrakUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NurtureTrak;
+			};
+			name = Debug;
+		};
+		440EC2A62C756EC50081C5D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K3YB5P2C9R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GVS.NurtureTrakUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NurtureTrak;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		440EC2752C756EC40081C5D8 /* Build configuration list for PBXProject "NurtureTrak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				440EC29C2C756EC50081C5D8 /* Debug */,
+				440EC29D2C756EC50081C5D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		440EC29E2C756EC50081C5D8 /* Build configuration list for PBXNativeTarget "NurtureTrak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				440EC29F2C756EC50081C5D8 /* Debug */,
+				440EC2A02C756EC50081C5D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		440EC2A12C756EC50081C5D8 /* Build configuration list for PBXNativeTarget "NurtureTrakTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				440EC2A22C756EC50081C5D8 /* Debug */,
+				440EC2A32C756EC50081C5D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		440EC2A42C756EC50081C5D8 /* Build configuration list for PBXNativeTarget "NurtureTrakUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				440EC2A52C756EC50081C5D8 /* Debug */,
+				440EC2A62C756EC50081C5D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 440EC2722C756EC40081C5D8 /* Project object */;
+}
