@@ -8,25 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var authManager = AuthenticationManager()
+    
     var body: some View {
-        TabView {
-            HomeView()
-                .tabItem {
-                    Label("Home", systemImage: "house")
-                }
-            ChildrenView()
-                .tabItem {
-                    Label("Children", systemImage: "person.2")
-                }
-            SessionsView()
-                .tabItem {
-                    Label("Sessions", systemImage: "clock")
-                }
-            ProfileView()
-                .tabItem {
-                    Label("Profile", systemImage: "person.circle")
-                }
+        Group {
+            if authManager.isAuthenticated {
+                MainTabView()
+            } else {
+                LandingView()
+            }
         }
+        .environmentObject(authManager)
     }
 }
 

@@ -58,6 +58,28 @@
 		440EC30B2C7577F80081C5D8 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC3092C7577F80081C5D8 /* DateFormatter.swift */; };
 		440EC30D2C75780D0081C5D8 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC30C2C75780D0081C5D8 /* Validators.swift */; };
 		440EC30E2C75780D0081C5D8 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC30C2C75780D0081C5D8 /* Validators.swift */; };
+		440EC3102C7587CB0081C5D8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440EC30F2C7587CB0081C5D8 /* Colors.xcassets */; };
+		440EC3112C7587CB0081C5D8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440EC30F2C7587CB0081C5D8 /* Colors.xcassets */; };
+		440EC3172C7593020081C5D8 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC3162C7593020081C5D8 /* LandingView.swift */; };
+		440EC3182C7593020081C5D8 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC3162C7593020081C5D8 /* LandingView.swift */; };
+		440EC31A2C7593120081C5D8 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC3192C7593120081C5D8 /* RegisterView.swift */; };
+		440EC31B2C7593120081C5D8 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC3192C7593120081C5D8 /* RegisterView.swift */; };
+		440EC31D2C7593180081C5D8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC31C2C7593180081C5D8 /* LoginView.swift */; };
+		440EC31E2C7593180081C5D8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC31C2C7593180081C5D8 /* LoginView.swift */; };
+		440EC3202C75932C0081C5D8 /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC31F2C75932C0081C5D8 /* LandingViewModel.swift */; };
+		440EC3212C75932C0081C5D8 /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC31F2C75932C0081C5D8 /* LandingViewModel.swift */; };
+		440EC3232C7593340081C5D8 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC3222C7593340081C5D8 /* RegisterViewModel.swift */; };
+		440EC3242C7593340081C5D8 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC3222C7593340081C5D8 /* RegisterViewModel.swift */; };
+		440EC3262C7593420081C5D8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC3252C7593420081C5D8 /* LoginViewModel.swift */; };
+		440EC3272C7593420081C5D8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC3252C7593420081C5D8 /* LoginViewModel.swift */; };
+		440EC32A2C7593AC0081C5D8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC3292C7593AC0081C5D8 /* CustomTextField.swift */; };
+		440EC32B2C7593AC0081C5D8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC3292C7593AC0081C5D8 /* CustomTextField.swift */; };
+		440EC32D2C7593BE0081C5D8 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC32C2C7593BE0081C5D8 /* CustomSecureField.swift */; };
+		440EC32E2C7593BE0081C5D8 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC32C2C7593BE0081C5D8 /* CustomSecureField.swift */; };
+		440EC3302C7593C50081C5D8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC32F2C7593C50081C5D8 /* CustomButton.swift */; };
+		440EC3312C7593C50081C5D8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC32F2C7593C50081C5D8 /* CustomButton.swift */; };
+		440EC3352C7597790081C5D8 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC3342C7597790081C5D8 /* MainTabView.swift */; };
+		440EC3362C7597790081C5D8 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC3342C7597790081C5D8 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +132,18 @@
 		440EC3062C7577E80081C5D8 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		440EC3092C7577F80081C5D8 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		440EC30C2C75780D0081C5D8 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		440EC30F2C7587CB0081C5D8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		440EC3162C7593020081C5D8 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		440EC3192C7593120081C5D8 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		440EC31C2C7593180081C5D8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		440EC31F2C75932C0081C5D8 /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
+		440EC3222C7593340081C5D8 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		440EC3252C7593420081C5D8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		440EC3292C7593AC0081C5D8 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		440EC32C2C7593BE0081C5D8 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
+		440EC32F2C7593C50081C5D8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		440EC3342C7597790081C5D8 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		440EC3372C75AF1E0081C5D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +194,8 @@
 		440EC27C2C756EC40081C5D8 /* NurtureTrak */ = {
 			isa = PBXGroup;
 			children = (
+				440EC3372C75AF1E0081C5D8 /* Info.plist */,
+				440EC3282C7593880081C5D8 /* SharedComponents */,
 				440EC2B22C7574A80081C5D8 /* Resources */,
 				440EC2B12C75749E0081C5D8 /* Utils */,
 				440EC2B02C7574970081C5D8 /* Services */,
@@ -200,6 +236,8 @@
 		440EC2AE2C7574850081C5D8 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				440EC3322C7597630081C5D8 /* Main */,
+				440EC3122C7592C90081C5D8 /* Authentication */,
 				440EC2B72C7575020081C5D8 /* Sessions */,
 				440EC2B62C7574FD0081C5D8 /* Children */,
 				440EC2B42C7574EE0081C5D8 /* Profile */,
@@ -244,6 +282,7 @@
 				440EC2812C756EC50081C5D8 /* Assets.xcassets */,
 				440EC2C92C7575CA0081C5D8 /* Localization */,
 				440EC2C82C7575C50081C5D8 /* Fonts */,
+				440EC30F2C7587CB0081C5D8 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -447,6 +486,69 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		440EC3122C7592C90081C5D8 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				440EC3152C7592E40081C5D8 /* ViewModels */,
+				440EC3142C7592DC0081C5D8 /* Models */,
+				440EC3132C7592D40081C5D8 /* Views */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		440EC3132C7592D40081C5D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				440EC3162C7593020081C5D8 /* LandingView.swift */,
+				440EC3192C7593120081C5D8 /* RegisterView.swift */,
+				440EC31C2C7593180081C5D8 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		440EC3142C7592DC0081C5D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		440EC3152C7592E40081C5D8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				440EC31F2C75932C0081C5D8 /* LandingViewModel.swift */,
+				440EC3222C7593340081C5D8 /* RegisterViewModel.swift */,
+				440EC3252C7593420081C5D8 /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		440EC3282C7593880081C5D8 /* SharedComponents */ = {
+			isa = PBXGroup;
+			children = (
+				440EC3292C7593AC0081C5D8 /* CustomTextField.swift */,
+				440EC32C2C7593BE0081C5D8 /* CustomSecureField.swift */,
+				440EC32F2C7593C50081C5D8 /* CustomButton.swift */,
+			);
+			path = SharedComponents;
+			sourceTree = "<group>";
+		};
+		440EC3322C7597630081C5D8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				440EC3332C75976A0081C5D8 /* Views */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		440EC3332C75976A0081C5D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				440EC3342C7597790081C5D8 /* MainTabView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -554,6 +656,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440EC3102C7587CB0081C5D8 /* Colors.xcassets in Resources */,
 				440EC2852C756EC50081C5D8 /* Preview Assets.xcassets in Resources */,
 				440EC2822C756EC50081C5D8 /* Assets.xcassets in Resources */,
 			);
@@ -570,6 +673,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440EC3112C7587CB0081C5D8 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +690,10 @@
 				440EC2E62C7577190081C5D8 /* ChildrenView.swift in Sources */,
 				440EC2C62C7575A40081C5D8 /* Constants.swift in Sources */,
 				440EC2EC2C7577320081C5D8 /* Profile.swift in Sources */,
+				440EC3172C7593020081C5D8 /* LandingView.swift in Sources */,
 				440EC2E32C75770B0081C5D8 /* Children.swift in Sources */,
+				440EC3262C7593420081C5D8 /* LoginViewModel.swift in Sources */,
+				440EC3352C7597790081C5D8 /* MainTabView.swift in Sources */,
 				440EC30A2C7577F80081C5D8 /* DateFormatter.swift in Sources */,
 				440EC2E02C7577020081C5D8 /* ChildrenViewModel.swift in Sources */,
 				440EC2802C756EC40081C5D8 /* ContentView.swift in Sources */,
@@ -594,15 +701,22 @@
 				440EC2F82C75778D0081C5D8 /* AuthManager.swift in Sources */,
 				440EC3042C7577D50081C5D8 /* View+Extensions.swift in Sources */,
 				440EC2FE2C7577AA0081C5D8 /* StorageManager.swift in Sources */,
+				440EC31A2C7593120081C5D8 /* RegisterView.swift in Sources */,
 				440EC2E92C7577290081C5D8 /* ProfileViewModel.swift in Sources */,
+				440EC32A2C7593AC0081C5D8 /* CustomTextField.swift in Sources */,
 				440EC2C12C7575810081C5D8 /* StorageService.swift in Sources */,
 				440EC2BE2C75756B0081C5D8 /* APIService.swift in Sources */,
 				440EC27E2C756EC40081C5D8 /* NurtureTrakApp.swift in Sources */,
 				440EC2D72C7576CD0081C5D8 /* SessionsViewModel.swift in Sources */,
+				440EC31D2C7593180081C5D8 /* LoginView.swift in Sources */,
+				440EC32D2C7593BE0081C5D8 /* CustomSecureField.swift in Sources */,
 				440EC2EF2C7577420081C5D8 /* ProfileView.swift in Sources */,
 				440EC30D2C75780D0081C5D8 /* Validators.swift in Sources */,
 				440EC2F52C75776D0081C5D8 /* HomeView.swift in Sources */,
 				440EC2F22C7577550081C5D8 /* HomeViewModel.swift in Sources */,
+				440EC3302C7593C50081C5D8 /* CustomButton.swift in Sources */,
+				440EC3232C7593340081C5D8 /* RegisterViewModel.swift in Sources */,
+				440EC3202C75932C0081C5D8 /* LandingViewModel.swift in Sources */,
 				440EC2DD2C7576F50081C5D8 /* SessionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,7 +739,10 @@
 				440EC2E72C7577190081C5D8 /* ChildrenView.swift in Sources */,
 				440EC2C72C7575A40081C5D8 /* Constants.swift in Sources */,
 				440EC2ED2C7577320081C5D8 /* Profile.swift in Sources */,
+				440EC3182C7593020081C5D8 /* LandingView.swift in Sources */,
 				440EC2E42C75770B0081C5D8 /* Children.swift in Sources */,
+				440EC3272C7593420081C5D8 /* LoginViewModel.swift in Sources */,
+				440EC3362C7597790081C5D8 /* MainTabView.swift in Sources */,
 				440EC30B2C7577F80081C5D8 /* DateFormatter.swift in Sources */,
 				440EC2E12C7577020081C5D8 /* ChildrenViewModel.swift in Sources */,
 				440EC29B2C756EC50081C5D8 /* NurtureTrakUITestsLaunchTests.swift in Sources */,
@@ -633,15 +750,22 @@
 				440EC2F92C75778D0081C5D8 /* AuthManager.swift in Sources */,
 				440EC3052C7577D50081C5D8 /* View+Extensions.swift in Sources */,
 				440EC2FF2C7577AA0081C5D8 /* StorageManager.swift in Sources */,
+				440EC31B2C7593120081C5D8 /* RegisterView.swift in Sources */,
 				440EC2EA2C7577290081C5D8 /* ProfileViewModel.swift in Sources */,
+				440EC32B2C7593AC0081C5D8 /* CustomTextField.swift in Sources */,
 				440EC2C22C7575810081C5D8 /* StorageService.swift in Sources */,
 				440EC2BF2C75756B0081C5D8 /* APIService.swift in Sources */,
 				440EC2992C756EC50081C5D8 /* NurtureTrakUITests.swift in Sources */,
 				440EC2D82C7576CD0081C5D8 /* SessionsViewModel.swift in Sources */,
+				440EC31E2C7593180081C5D8 /* LoginView.swift in Sources */,
+				440EC32E2C7593BE0081C5D8 /* CustomSecureField.swift in Sources */,
 				440EC2F02C7577420081C5D8 /* ProfileView.swift in Sources */,
 				440EC30E2C75780D0081C5D8 /* Validators.swift in Sources */,
 				440EC2F62C75776D0081C5D8 /* HomeView.swift in Sources */,
 				440EC2F32C7577550081C5D8 /* HomeViewModel.swift in Sources */,
+				440EC3312C7593C50081C5D8 /* CustomButton.swift in Sources */,
+				440EC3242C7593340081C5D8 /* RegisterViewModel.swift in Sources */,
+				440EC3212C75932C0081C5D8 /* LandingViewModel.swift in Sources */,
 				440EC2DE2C7576F50081C5D8 /* SessionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -714,10 +838,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This App uses local network to make API calls";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -771,10 +897,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This App uses local network to make API calls";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
@@ -792,6 +920,7 @@
 				DEVELOPMENT_TEAM = K3YB5P2C9R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NurtureTrak/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -821,6 +950,7 @@
 				DEVELOPMENT_TEAM = K3YB5P2C9R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NurtureTrak/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
