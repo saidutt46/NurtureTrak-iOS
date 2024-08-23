@@ -5,44 +5,55 @@
 //  Created by Sai Dutt Ganduri on 8/20/24.
 //
 
-import Foundation
 import SwiftUI
 
 struct ProfileView: View {
     @EnvironmentObject var authManager: AuthenticationManager
     @StateObject private var viewModel = ProfileViewModel()
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
+
     let buttonHeight: CGFloat = 50
     var buttonWidth: CGFloat {
         UIScreen.main.bounds.width - 40 // 20 points padding on each side
     }
 
-    
     var body: some View {
         NavigationView {
             VStack {
                 // ADDITIONAL CODE
                 
                 Spacer()
-                CustomButton(title: "Forgot Password?", 
+                CustomButton(title: "Forgot Password?",
                              backgroundColor: .rougePink,
                              width: buttonWidth,
                              height: buttonHeight) {
-                    await viewModel.forgotPassword()
+                    Task {
+                        await viewModel.forgotPassword()
+                        if !viewModel.errorMessage.isEmpty {
+                            showingAlert = true
+                            alertMessage = viewModel.errorMessage
+                        }
+                    }
                 }
                 CustomButton(title: "Logout",
                              backgroundColor: .vistaBlue,
                              width: buttonWidth,
                              height: buttonHeight) {
-                    await authManager.signOut()
+                    Task {
+                        do {
+                            try await authManager.signOut()
+                        } catch {
+                            showingAlert = true
+                            alertMessage = error.localizedDescription
+                        }
+                    }
                 }
                 .padding(.bottom, 10)
             }
         }
-        .alert(item: Binding<AlertItem?>(
-            get: { self.authManager.errorMessage.map { AlertItem(message: $0) } },
-            set: { _ in self.authManager.errorMessage = nil }
-        )) { alertItem in
-            Alert(title: Text("Error"), message: Text(alertItem.message))
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Error"), message: Text(alertMessage))
         }
     }
 }

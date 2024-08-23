@@ -6,18 +6,38 @@
 //
 
 import Foundation
+import Combine
 
 class LoginViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var isLoginSuccessful = false
-    @Published var errorMessage: String?
+    @Published var errorMessage = ""
     @Published var isLoading = false
+    @Published var emailError = ""
+    @Published var isEmailFieldTouched = false
     
     private let authManager: AuthenticationManager
+    private var cancellables = Set<AnyCancellable>()
     
     init(authManager: AuthenticationManager = AuthenticationManager()) {
         self.authManager = authManager
+        setupValidation()
+    }
+    
+    private func setupValidation() {
+        $email
+            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .filter { _ in self.isEmailFieldTouched }
+            .map { self.validateEmail($0) }
+            .assign(to: \.emailError, on: self)
+            .store(in: &cancellables)
+    }
+    
+    private func validateEmail(_ email: String) -> String {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        return emailPredicate.evaluate(with: email) ? "" : "Invalid email format"
     }
     
     var isValid: Bool {
@@ -38,6 +58,7 @@ class LoginViewModel: ObservableObject {
                 self.isLoginSuccessful = true
                 self.authManager.isAuthenticated = true
                 self.isLoading = false
+                self.errorMessage = "" // Clear any previous error messages
             }
         } catch {
             await MainActor.run {

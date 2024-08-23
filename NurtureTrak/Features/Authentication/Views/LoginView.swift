@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject private var viewModel = LoginViewModel()
+    @StateObject private var viewModel: LoginViewModel
     @EnvironmentObject var authManager: AuthenticationManager
     @Environment(\.dismiss) var dismiss
     @Binding var showRegisterView: Bool
@@ -15,21 +15,57 @@ struct LoginView: View {
         _showRegisterView = showRegisterView
     }
 
-
     var body: some View {
-        VStack(spacing: 20) {
-            HStack {
-                Text("SIGN IN TO YOUR ACCOUNT")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                Spacer()
-                Button(action: { dismiss() }) {
-                    Image(systemName: "xmark")
-                        .foregroundColor(.black)
+        ScrollView {
+            VStack(spacing: 20) {
+                header
+                
+                socialButtons
+                
+                Text("OR SIGN IN WITH EMAIL")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                
+                inputFields
+                
+                if !viewModel.errorMessage.isEmpty {
+                    Text(viewModel.errorMessage)
+                        .foregroundColor(.red)
+                        .padding()
                 }
+                signInButton
+                
+                forgotPasswordButton
+                
+                Spacer()
+                
+                registerSection
             }
-            .padding(.top)
-            
+            .padding()
+        }
+        .onChange(of: authManager.isAuthenticated) { oldValue, newValue in
+            if newValue {
+                dismiss()
+            }
+        }
+    }
+    
+    private var header: some View {
+        HStack {
+            Text("SIGN IN TO YOUR ACCOUNT")
+                .font(.headline)
+                .fontWeight(.bold)
+            Spacer()
+            Button(action: { dismiss() }) {
+                Image(systemName: "xmark")
+                    .foregroundColor(.black)
+            }
+        }
+        .padding(.top)
+    }
+    
+    private var socialButtons: some View {
+        VStack(spacing: 10) {
             CustomButton(
                 title: "Continue with Apple",
                 backgroundColor: .white,
@@ -39,9 +75,11 @@ struct LoginView: View {
                 width: buttonWidth,
                 height: buttonHeight
             ) {
-                await viewModel.signInWithApple()
-                if viewModel.isLoginSuccessful {
-                    dismiss()
+                Task {
+                    await viewModel.signInWithApple()
+                    if viewModel.isLoginSuccessful {
+                        dismiss()
+                    }
                 }
             }
 
@@ -50,67 +88,77 @@ struct LoginView: View {
                 backgroundColor: .white,
                 foregroundColor: .black,
                 borderColor: .gray,
-                icon: Image(systemName: "g.circle"),
+                icon: Image("google"),
                 width: buttonWidth,
                 height: buttonHeight
             ) {
-                await viewModel.signInWithGoogle()
-                if viewModel.isLoginSuccessful {
-                    dismiss()
+                Task {
+                    await viewModel.signInWithGoogle()
+                    if viewModel.isLoginSuccessful {
+                        dismiss()
+                    }
                 }
             }
-            
-            Text("OR SIGN IN WITH EMAIL")
-                .font(.caption)
-                .foregroundColor(.gray)
-            
-            VStack(spacing: 15) {
-                CustomTextField(placeholder: "Enter your email address", text: $viewModel.email)
-                CustomSecureField(placeholder: "Enter your password", text: $viewModel.password)
+        }
+    }
+    
+    private var inputFields: some View {
+        VStack(spacing: 15) {
+            CustomTextField(
+                placeholder: "Enter your email address",
+                text: $viewModel.email,
+                error: viewModel.emailError
+            )
+            .onTapGesture {
+                viewModel.isEmailFieldTouched = true
             }
-            
-            if let errorMessage = viewModel.errorMessage {
-                Text(errorMessage)
-                    .foregroundColor(.red)
-                    .padding()
-            }
-            
-            CustomButton(title: "Sign In", 
-                         backgroundColor: .black,
-                         width: buttonWidth,
-                         height: buttonHeight) {
+            CustomSecureField(
+                placeholder: "Enter your password",
+                text: $viewModel.password
+            )
+        }
+    }
+    
+    private var signInButton: some View {
+        CustomButton(
+            title: "Sign In",
+            backgroundColor: .black,
+            width: buttonWidth,
+            height: buttonHeight
+        ) {
+            Task {
                 await viewModel.login()
                 if viewModel.isLoginSuccessful {
                     dismiss()
                 }
             }
-            .disabled(!viewModel.isValid || viewModel.isLoading)
-            
-            CustomButton(title: "Forgot Password?",
-                         backgroundColor: .clear,
-                         width: buttonWidth,
-                         height: buttonHeight) {
+        }
+        .disabled(!viewModel.isValid || viewModel.isLoading)
+    }
+    
+    private var forgotPasswordButton: some View {
+        CustomButton(
+            title: "Forgot Password?",
+            backgroundColor: .clear,
+            width: buttonWidth,
+            height: buttonHeight
+        ) {
+            Task {
                 await viewModel.forgotPassword()
             }
-            .foregroundColor(.blue)
-            
-            Spacer()
-            
-            HStack {
-                Text("Don't have an account?")
-                Button("Register") {
-                    dismiss()
-                    showRegisterView = true
-                }
-                .foregroundColor(.blue)
-            }
-            .font(.footnote)
         }
-        .padding()
-        .onChange(of: authManager.isAuthenticated) { oldValue, newValue in
-            if newValue {
+        .foregroundColor(.blue)
+    }
+    
+    private var registerSection: some View {
+        HStack {
+            Text("Don't have an account?")
+            Button("Register") {
                 dismiss()
+                showRegisterView = true
             }
+            .foregroundColor(.blue)
         }
+        .font(.footnote)
     }
 }

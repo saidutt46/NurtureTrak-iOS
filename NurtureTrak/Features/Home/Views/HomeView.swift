@@ -62,6 +62,12 @@ struct HomeView: View {
             )
             .padding(.top, 20)
             
+            // widget to add children if count is 0
+            if childrenViewModel.children.isEmpty {
+                AddChildrenWidget(action: { showingAddChildSheet = true })
+                    .padding(.top, 20)
+            }
+            
             // Display children
             ForEach(childrenViewModel.children) { child in
                 Text(child.name)
@@ -88,6 +94,39 @@ struct HomeView: View {
             viewModel.fetchUserInfo()
             childrenViewModel.fetchChildren()
             sessionsViewModel.fetchSessions()
+        }
+        .sheet(isPresented: $showingAddChildSheet) {
+            // Add Child View goes here
+        }
+    }
+}
+
+struct AddChildrenWidget: View {
+    var action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: 10) {
+                Image(systemName: "person.badge.plus")
+                    .font(.system(size: 30))
+                    .foregroundColor(.white)
+                
+                Text("Ready to start tracking?")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                
+                Text("Add your little one to begin your nurturing journey!")
+                    .font(.subheadline)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(
+                LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            )
+            .cornerRadius(15)
+            .shadow(color: .gray.opacity(0.4), radius: 5, x: 0, y: 2)
         }
     }
 }

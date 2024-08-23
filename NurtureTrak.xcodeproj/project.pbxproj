@@ -80,6 +80,10 @@
 		440EC3312C7593C50081C5D8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC32F2C7593C50081C5D8 /* CustomButton.swift */; };
 		440EC3352C7597790081C5D8 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC3342C7597790081C5D8 /* MainTabView.swift */; };
 		440EC3362C7597790081C5D8 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC3342C7597790081C5D8 /* MainTabView.swift */; };
+		4442E4E42C7861E200E3F6C9 /* AuthenticationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442E4E32C7861E200E3F6C9 /* AuthenticationModels.swift */; };
+		4442E4E72C7862C600E3F6C9 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442E4E62C7862C600E3F6C9 /* AuthError.swift */; };
+		4442E4E92C78630300E3F6C9 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442E4E82C78630300E3F6C9 /* TokenManager.swift */; };
+		4442E4EB2C78631F00E3F6C9 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442E4EA2C78631F00E3F6C9 /* APIEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +148,10 @@
 		440EC32F2C7593C50081C5D8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		440EC3342C7597790081C5D8 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		440EC3372C75AF1E0081C5D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4442E4E32C7861E200E3F6C9 /* AuthenticationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModels.swift; sourceTree = "<group>"; };
+		4442E4E62C7862C600E3F6C9 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		4442E4E82C78630300E3F6C9 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		4442E4EA2C78631F00E3F6C9 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +277,7 @@
 		440EC2B12C75749E0081C5D8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4442E4E52C7862B600E3F6C9 /* Enums */,
 				440EC2C42C7575940081C5D8 /* Helpers */,
 				440EC2C32C75758E0081C5D8 /* Extensions */,
 				440EC2C52C7575A30081C5D8 /* Constants.swift */,
@@ -331,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				440EC2F72C75778D0081C5D8 /* AuthManager.swift */,
+				4442E4E82C78630300E3F6C9 /* TokenManager.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -509,6 +519,7 @@
 		440EC3142C7592DC0081C5D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4442E4E32C7861E200E3F6C9 /* AuthenticationModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -547,6 +558,15 @@
 				440EC3342C7597790081C5D8 /* MainTabView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4442E4E52C7862B600E3F6C9 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				4442E4E62C7862C600E3F6C9 /* AuthError.swift */,
+				4442E4EA2C78631F00E3F6C9 /* APIEndpoint.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -690,7 +710,9 @@
 				440EC2E62C7577190081C5D8 /* ChildrenView.swift in Sources */,
 				440EC2C62C7575A40081C5D8 /* Constants.swift in Sources */,
 				440EC2EC2C7577320081C5D8 /* Profile.swift in Sources */,
+				4442E4E72C7862C600E3F6C9 /* AuthError.swift in Sources */,
 				440EC3172C7593020081C5D8 /* LandingView.swift in Sources */,
+				4442E4E42C7861E200E3F6C9 /* AuthenticationModels.swift in Sources */,
 				440EC2E32C75770B0081C5D8 /* Children.swift in Sources */,
 				440EC3262C7593420081C5D8 /* LoginViewModel.swift in Sources */,
 				440EC3352C7597790081C5D8 /* MainTabView.swift in Sources */,
@@ -709,6 +731,7 @@
 				440EC27E2C756EC40081C5D8 /* NurtureTrakApp.swift in Sources */,
 				440EC2D72C7576CD0081C5D8 /* SessionsViewModel.swift in Sources */,
 				440EC31D2C7593180081C5D8 /* LoginView.swift in Sources */,
+				4442E4EB2C78631F00E3F6C9 /* APIEndpoint.swift in Sources */,
 				440EC32D2C7593BE0081C5D8 /* CustomSecureField.swift in Sources */,
 				440EC2EF2C7577420081C5D8 /* ProfileView.swift in Sources */,
 				440EC30D2C75780D0081C5D8 /* Validators.swift in Sources */,
@@ -716,6 +739,7 @@
 				440EC2F22C7577550081C5D8 /* HomeViewModel.swift in Sources */,
 				440EC3302C7593C50081C5D8 /* CustomButton.swift in Sources */,
 				440EC3232C7593340081C5D8 /* RegisterViewModel.swift in Sources */,
+				4442E4E92C78630300E3F6C9 /* TokenManager.swift in Sources */,
 				440EC3202C75932C0081C5D8 /* LandingViewModel.swift in Sources */,
 				440EC2DD2C7576F50081C5D8 /* SessionsView.swift in Sources */,
 			);
