@@ -14,6 +14,10 @@ struct HomeView: View {
     @State private var showingNewSessionSheet = false
     @StateObject private var childrenViewModel = ChildrenViewModel()
     @StateObject private var sessionsViewModel = SessionsViewModel()
+    let buttonHeight: CGFloat = 50
+    var buttonWidth: CGFloat {
+        UIScreen.main.bounds.width - 40 // 20 points padding on each side
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -70,7 +74,11 @@ struct HomeView: View {
             Spacer()
             
             // Start Feeding Session Button
-            CustomButton(title: "Start Feeding Session", action: viewModel.startNewSessionFlow, backgroundColor: .blue)
+            CustomButton(title: "Start Feeding Session",
+                         backgroundColor: .blue,
+                         width: buttonWidth,
+                         height: buttonHeight,
+                         action: viewModel.startNewSessionFlow)
                 .padding(.bottom, 100)
         }
         .padding(20)

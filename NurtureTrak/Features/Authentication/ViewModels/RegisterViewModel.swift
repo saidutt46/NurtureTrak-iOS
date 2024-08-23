@@ -15,6 +15,7 @@ class RegisterViewModel: ObservableObject {
     @Published var isRegistrationSuccessful = false
     @Published var errorMessage: String?
     @Published var verificationRequired = false
+    @Published var isLoading = false
     
     private let authManager: AuthenticationManager
     
@@ -26,28 +27,34 @@ class RegisterViewModel: ObservableObject {
         !email.isEmpty && !firstName.isEmpty && !lastName.isEmpty && !password.isEmpty
     }
     
-    func register(email: String, password: String, completion: @escaping (Bool) -> Void) {
+    func register() async {
         guard isValid else {
             self.errorMessage = "Please fill in all fields."
             return
         }
         
-        authManager.register(email: email, password: password, firstName: firstName, lastName: lastName) { success in
-            if success {
+        await MainActor.run { self.isLoading = true }
+        
+        do {
+            try await authManager.register(email: email, password: password, firstName: firstName, lastName: lastName)
+            await MainActor.run {
                 self.isRegistrationSuccessful = true
                 self.verificationRequired = self.authManager.verificationRequired
-            } else {
-                self.errorMessage = self.authManager.errorMessage
+                self.isLoading = false
             }
-            completion(success)
+        } catch {
+            await MainActor.run {
+                self.errorMessage = error.localizedDescription
+                self.isLoading = false
+            }
         }
     }
     
-    func signUpWithGoogle() {
+    func signUpWithGoogle() async {
         // Implement Google sign-up
     }
     
-    func signUpWithApple() {
+    func signUpWithApple() async {
         // Implement Apple sign-up
     }
 }

@@ -24,55 +24,58 @@ class LoginViewModel: ObservableObject {
         !email.isEmpty && !password.isEmpty
     }
     
-    func login(email: String, password: String, completion: @escaping (Bool) -> Void) {
+    func login() async {
         guard isValid else {
             self.errorMessage = "Please enter both email and password."
-            completion(false)
             return
         }
         
-        isLoading = true
-        errorMessage = nil
+        await MainActor.run { self.isLoading = true }
         
-        authManager.signIn(email: email, password: password) { [weak self] success in
-            DispatchQueue.main.async {
-                guard let self = self else { return } // Safely unwrap self
-                
+        do {
+            try await authManager.signIn(email: email, password: password)
+            await MainActor.run {
+                self.isLoginSuccessful = true
+                self.authManager.isAuthenticated = true
                 self.isLoading = false
-                if success {
-                    self.isLoginSuccessful = true
-                    // You might want to move this logic to AuthManager if it's common for all login processes
-                    if let accessToken = UserDefaults.standard.string(forKey: "accessToken") {
-                        print("Access token stored: \(accessToken)")
-                    }
-                    // Consider moving user data storage to AuthManager as well
-                    let firstName = UserDefaults.standard.string(forKey: "userFirstName") ?? ""
-                    let lastName = UserDefaults.standard.string(forKey: "userLastName") ?? ""
-                    print("Logged in user: \(firstName) \(lastName)")
-                    self.authManager.isAuthenticated = true
-                } else {
-                    self.errorMessage = self.authManager.errorMessage
-                }
-                completion(success)
+            }
+        } catch {
+            await MainActor.run {
+                self.errorMessage = error.localizedDescription
+                self.isLoading = false
             }
         }
     }
     
-    func signInWithGoogle(completion: @escaping (Bool) -> Void) {
+    func signInWithGoogle() async {
         // Implement Google sign-in
         // You might want to add a method in AuthManager for this
-        completion(false)  // Placeholder, replace with actual implementation
     }
     
-    func signInWithApple(completion: @escaping (Bool) -> Void) {
+    func signInWithApple() async {
         // Implement Apple sign-in
         // You might want to add a method in AuthManager for this
-        completion(false)  // Placeholder, replace with actual implementation
     }
     
-    func forgotPassword(email: String, completion: @escaping (Bool) -> Void) {
-        // Implement forgot password logic
-        // You might want to add a method in AuthManager for this
-        completion(false)  // Placeholder, replace with actual implementation
+    func forgotPassword() async {
+        guard !email.isEmpty else {
+            self.errorMessage = "Please enter your email address."
+            return
+        }
+        
+        await MainActor.run { self.isLoading = true }
+        
+        do {
+            try await authManager.forgotPassword(email: email)
+            await MainActor.run {
+                self.errorMessage = "Password reset instructions sent to your email."
+                self.isLoading = false
+            }
+        } catch {
+            await MainActor.run {
+                self.errorMessage = "Failed to send password reset. Please try again."
+                self.isLoading = false
+            }
+        }
     }
 }

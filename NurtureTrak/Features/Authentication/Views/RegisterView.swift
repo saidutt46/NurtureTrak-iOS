@@ -6,6 +6,16 @@ struct RegisterView: View {
     @Environment(\.dismiss) var dismiss
     @State private var showingVerificationAlert = false
     @Binding var showLoginView: Bool
+    let buttonHeight: CGFloat = 50
+    var buttonWidth: CGFloat {
+        UIScreen.main.bounds.width - 40 // 20 points padding on each side
+    }
+
+    
+    init(authManager: AuthenticationManager, showLoginView: Binding<Bool>) {
+        _viewModel = StateObject(wrappedValue: RegisterViewModel(authManager: authManager))
+        _showLoginView = showLoginView
+    }
 
     var body: some View {
         VStack(spacing: 20) {
@@ -13,32 +23,28 @@ struct RegisterView: View {
                 .font(.headline)
                 .padding(.top)
             
-            Button(action: viewModel.signUpWithApple) {
-                HStack {
-                    Image(systemName: "apple.logo")
-                    Text("Sign up with Apple")
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.black)
-                .foregroundColor(.white)
-                .cornerRadius(8)
+            CustomButton(
+                title: "Continue with Apple",
+                backgroundColor: .white,
+                foregroundColor: .black,
+                borderColor: .gray,
+                icon: Image(systemName: "apple.logo"),
+                width: buttonWidth,
+                height: buttonHeight
+            ) {
+                await viewModel.signUpWithApple()
             }
-            
-            Button(action: viewModel.signUpWithGoogle) {
-                HStack {
-                    Image(systemName: "g.circle")
-                    Text("Sign up with Google")
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.white)
-                .foregroundColor(.black)
-                .cornerRadius(8)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.gray, lineWidth: 1)
-                )
+
+            CustomButton(
+                title: "Continue with Google",
+                backgroundColor: .white,
+                foregroundColor: .black,
+                borderColor: .gray,
+                icon: Image(systemName: "g.circle"),
+                width: buttonWidth,
+                height: buttonHeight
+            ) {
+                await viewModel.signUpWithGoogle()
             }
             
             Text("OR SIGN UP WITH EMAIL")
@@ -58,30 +64,11 @@ struct RegisterView: View {
                     .padding()
             }
             
-            Button(action: {
-                viewModel.register(email: viewModel.email, password: viewModel.password) { success in
-                    if success {
-                        showingVerificationAlert = true
-                    }
-                    // TODO::
-//                    if success {
-//                        if viewModel.verificationRequired {
-//                            showingVerificationAlert = true
-//                        } else {
-//                            signInAfterRegistration()
-//                        }
-//                    }
-                }
-            }) {
-                Text("Sign Up")
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.black)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
+            CustomButton(title: "Sign Up", 
+                         backgroundColor: .black, width: buttonWidth, height: buttonHeight) {
+                await performRegistration()
             }
-            .disabled(!viewModel.isValid)
-            
+            .disabled(!viewModel.isValid || viewModel.isLoading)
             HStack {
                 Text("Already have an account?")
                 Button("Sign in") {
@@ -119,13 +106,22 @@ struct RegisterView: View {
         }
     }
     
-    private func signInAfterRegistration() {
-        authManager.signIn(email: viewModel.email, password: viewModel.password) { success in
-            if success {
-                dismiss()
-            } else {
-                viewModel.errorMessage = "Registration successful, but sign-in failed. Please try logging in manually."
+    private func performRegistration() async {
+        await viewModel.register()
+        if viewModel.isRegistrationSuccessful {
+            showingVerificationAlert = viewModel.verificationRequired
+            if !viewModel.verificationRequired {
+                await signInAfterRegistration()
             }
+        }
+    }
+    
+    private func signInAfterRegistration() async {
+        do {
+            try await authManager.signIn(email: viewModel.email, password: viewModel.password)
+            dismiss()
+        } catch {
+            viewModel.errorMessage = "Registration successful, but sign-in failed. Please try logging in manually."
         }
     }
 }

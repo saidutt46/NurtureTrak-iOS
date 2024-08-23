@@ -5,6 +5,10 @@ struct LoginView: View {
     @EnvironmentObject var authManager: AuthenticationManager
     @Environment(\.dismiss) var dismiss
     @Binding var showRegisterView: Bool
+    let buttonHeight: CGFloat = 50
+    var buttonWidth: CGFloat {
+        UIScreen.main.bounds.width - 40 // 20 points padding on each side
+    }
     
     init(authManager: AuthenticationManager, showRegisterView: Binding<Bool>) {
         _viewModel = StateObject(wrappedValue: LoginViewModel(authManager: authManager))
@@ -26,48 +30,34 @@ struct LoginView: View {
             }
             .padding(.top)
             
-            Button(action: {
-                viewModel.signInWithApple { success in
-                    if success {
-                        dismiss()
-                    }
+            CustomButton(
+                title: "Continue with Apple",
+                backgroundColor: .white,
+                foregroundColor: .black,
+                borderColor: .gray,
+                icon: Image(systemName: "apple.logo"),
+                width: buttonWidth,
+                height: buttonHeight
+            ) {
+                await viewModel.signInWithApple()
+                if viewModel.isLoginSuccessful {
+                    dismiss()
                 }
-            }) {
-                HStack {
-                    Image(systemName: "apple.logo")
-                    Text("Continue with Apple")
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.white)
-                .foregroundColor(.black)
-                .cornerRadius(8)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.gray, lineWidth: 1)
-                )
             }
-            
-            Button(action: {
-                viewModel.signInWithGoogle { success in
-                    if success {
-                        dismiss()
-                    }
+
+            CustomButton(
+                title: "Continue with Google",
+                backgroundColor: .white,
+                foregroundColor: .black,
+                borderColor: .gray,
+                icon: Image(systemName: "g.circle"),
+                width: buttonWidth,
+                height: buttonHeight
+            ) {
+                await viewModel.signInWithGoogle()
+                if viewModel.isLoginSuccessful {
+                    dismiss()
                 }
-            }) {
-                HStack {
-                    Image(systemName: "g.circle")
-                    Text("Continue with Google")
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.white)
-                .foregroundColor(.black)
-                .cornerRadius(8)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.gray, lineWidth: 1)
-                )
             }
             
             Text("OR SIGN IN WITH EMAIL")
@@ -85,34 +75,22 @@ struct LoginView: View {
                     .padding()
             }
             
-            Button(action: {
-                viewModel.login(email: viewModel.email, password: viewModel.password) { success in
-                    if success {
-                        dismiss()
-                    }
+            CustomButton(title: "Sign In", 
+                         backgroundColor: .black,
+                         width: buttonWidth,
+                         height: buttonHeight) {
+                await viewModel.login()
+                if viewModel.isLoginSuccessful {
+                    dismiss()
                 }
-            }) {
-                Text("Sign In")
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.black)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
             }
             .disabled(!viewModel.isValid || viewModel.isLoading)
             
-            if viewModel.isLoading {
-                ProgressView()
-            }
-            
-            Button("Forgot Password?") {
-                viewModel.forgotPassword(email: viewModel.email) { success in
-                    if success {
-                        viewModel.errorMessage = "Password reset instructions sent to your email."
-                    } else {
-                        viewModel.errorMessage = "Failed to send password reset. Please try again."
-                    }
-                }
+            CustomButton(title: "Forgot Password?",
+                         backgroundColor: .clear,
+                         width: buttonWidth,
+                         height: buttonHeight) {
+                await viewModel.forgotPassword()
             }
             .foregroundColor(.blue)
             
