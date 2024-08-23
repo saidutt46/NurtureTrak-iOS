@@ -84,6 +84,7 @@
 		4442E4E72C7862C600E3F6C9 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442E4E62C7862C600E3F6C9 /* AuthError.swift */; };
 		4442E4E92C78630300E3F6C9 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442E4E82C78630300E3F6C9 /* TokenManager.swift */; };
 		4442E4EB2C78631F00E3F6C9 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442E4EA2C78631F00E3F6C9 /* APIEndpoint.swift */; };
+		444C2B6E2C787C4F005EE162 /* BaseHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C2B6D2C787C4F005EE162 /* BaseHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +153,7 @@
 		4442E4E62C7862C600E3F6C9 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		4442E4E82C78630300E3F6C9 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		4442E4EA2C78631F00E3F6C9 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		444C2B6D2C787C4F005EE162 /* BaseHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +385,7 @@
 			children = (
 				440EC3092C7577F80081C5D8 /* DateFormatter.swift */,
 				440EC30C2C75780D0081C5D8 /* Validators.swift */,
+				444C2B6D2C787C4F005EE162 /* BaseHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				440EC2E32C75770B0081C5D8 /* Children.swift in Sources */,
 				440EC3262C7593420081C5D8 /* LoginViewModel.swift in Sources */,
 				440EC3352C7597790081C5D8 /* MainTabView.swift in Sources */,
+				444C2B6E2C787C4F005EE162 /* BaseHelpers.swift in Sources */,
 				440EC30A2C7577F80081C5D8 /* DateFormatter.swift in Sources */,
 				440EC2E02C7577020081C5D8 /* ChildrenViewModel.swift in Sources */,
 				440EC2802C756EC40081C5D8 /* ContentView.swift in Sources */,

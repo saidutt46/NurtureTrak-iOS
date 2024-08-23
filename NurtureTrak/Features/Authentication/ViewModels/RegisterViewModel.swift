@@ -123,24 +123,35 @@ class RegisterViewModel: ObservableObject {
     private func handleRegistrationError(_ error: Error) {
         if let authError = error as? AuthError {
             switch authError {
-            case .emailAlreadyInUse:
-                emailError = "This email is already in use. Please use a different email or try logging in."
+            case .invalidCredentials:
+                errorMessage = authError.errorDescription ?? "Invalid credentials"
+            case .accountNotVerified:
+                errorMessage = authError.errorDescription ?? "Account not verified"
+            case .invalidToken:
+                errorMessage = authError.errorDescription ?? "Invalid token"
+            case .networkError(let message):
+                errorMessage = "Network error: \(message)"
+            case .serverError(let message):
+                errorMessage = "Server error: \(message)"
+            case .decodingError:
+                errorMessage = authError.errorDescription ?? "Decoding error"
+            case .noAccessToken:
+                errorMessage = authError.errorDescription ?? "No access token"
+            case .noRefreshToken:
+                errorMessage = authError.errorDescription ?? "No refresh token"
+            case .emailAlreadyInUse(let message):
+                emailError = message
             case .invalidEmail:
-                emailError = "The email address is invalid. Please enter a valid email."
+                emailError = authError.errorDescription ?? "Invalid email"
             case .weakPassword:
-                errorMessage = "The password is too weak. Please use a stronger password."
+                errorMessage = authError.errorDescription ?? "Weak password"
             case .registrationFailed(let message):
                 errorMessage = "Registration failed: \(message)"
-            case .networkError(let message):
-                errorMessage = "Network error: \(message). Please check your internet connection and try again."
-            case .serverError(let message):
-                errorMessage = "Server error: \(message). Please try again later."
-            default:
-                errorMessage = "An unexpected error occurred. Please try again."
             }
         } else {
-            errorMessage = "An unexpected error occurred. Please try again."
+            errorMessage = "An unexpected error occurred: \(error.localizedDescription)"
         }
+        print("Registration error: \(error.localizedDescription)")
     }
     
     func signUpWithApple() async {

@@ -10,7 +10,7 @@ enum AuthError: LocalizedError {
     case noAccessToken
     case noRefreshToken
     // New error cases for registration
-    case emailAlreadyInUse
+    case emailAlreadyInUse(String)
     case invalidEmail
     case weakPassword
     case registrationFailed(String)

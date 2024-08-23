@@ -45,11 +45,15 @@ class AuthenticationManager: ObservableObject {
             "lastName": lastName
         ]
         
-        let data = try await networkManager.sendRequest(to: endpoint, method: .post, body: body)
-        let response = try JSONDecoder().decode(RegisterResponse.self, from: data)
-        
-        await MainActor.run {
-            self.verificationRequired = response.verificationRequired
+        do {
+            let data = try await networkManager.sendRequest(to: endpoint, method: .post, body: body)
+            let response = try JSONDecoder().decode(RegisterResponse.self, from: data)
+            
+            await MainActor.run {
+                self.verificationRequired = response.verificationRequired
+            }
+        } catch {
+            throw error // Propagate the error
         }
     }
     
