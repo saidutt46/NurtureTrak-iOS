@@ -132,7 +132,7 @@ struct RegisterView: View {
                 }
             }
         }
-        .disabled(!viewModel.isValid || viewModel.isLoading)
+        .disabled(viewModel.isLoading)
     }
     
     private var alreadyHaveAccountSection: some View {

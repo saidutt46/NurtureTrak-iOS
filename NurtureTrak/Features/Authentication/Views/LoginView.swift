@@ -14,7 +14,7 @@ struct LoginView: View {
         _viewModel = StateObject(wrappedValue: LoginViewModel(authManager: authManager))
         _showRegisterView = showRegisterView
     }
-
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
@@ -109,13 +109,23 @@ struct LoginView: View {
                 text: $viewModel.email,
                 error: viewModel.emailError
             )
-            .onTapGesture {
-                viewModel.isEmailFieldTouched = true
+            .onChange(of: viewModel.email) { old, new in
+                viewModel.emailEditingChanged(isEditing: true)
+            }
+            .onSubmit {
+                viewModel.emailEditingChanged(isEditing: false)
             }
             CustomSecureField(
                 placeholder: "Enter your password",
-                text: $viewModel.password
+                text: $viewModel.password,
+                error: viewModel.passwordError
             )
+            .onChange(of: viewModel.email) { old, new in
+                viewModel.passwordEditiinChanged(isEditing: true)
+            }
+            .onSubmit {
+                viewModel.passwordEditiinChanged(isEditing: false)
+            }
         }
     }
     
@@ -133,13 +143,13 @@ struct LoginView: View {
                 }
             }
         }
-        .disabled(!viewModel.isValid || viewModel.isLoading)
+        .disabled(viewModel.isLoading)
     }
     
     private var forgotPasswordButton: some View {
         CustomButton(
             title: "Forgot Password?",
-            backgroundColor: .clear,
+            backgroundColor: .hanBlue,
             width: buttonWidth,
             height: buttonHeight
         ) {
