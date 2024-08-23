@@ -47,12 +47,13 @@ struct CustomButton: View {
                 isLoading = false
             }
         }) {
-            HStack {
+            HStack(spacing: 8) {
                 if let icon = icon {
                     icon
                         .resizable()
+                        .renderingMode(.template)
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: height.map { $0 * 0.5 } ?? 20)
+                        .frame(width: 20, height: 20)
                 }
                 Text(title)
                     .font(.headline)

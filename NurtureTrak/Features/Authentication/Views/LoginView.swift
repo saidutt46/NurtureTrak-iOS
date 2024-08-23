@@ -35,7 +35,7 @@ struct LoginView: View {
                 }
                 signInButton
                 
-                forgotPasswordButton
+//                forgotPasswordButton
                 
                 Spacer()
                 

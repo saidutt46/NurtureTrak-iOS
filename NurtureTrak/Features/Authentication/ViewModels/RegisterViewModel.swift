@@ -20,6 +20,7 @@ class RegisterViewModel: ObservableObject {
     @Published var isPasswordLengthValid = false
     @Published var isPasswordUppercaseValid = false
     @Published var isPasswordDigitValid = false
+    @Published var isPasswordSpecialCharValid = false
     
     @Published var errorMessage = ""
     @Published var isLoading = false
@@ -59,6 +60,11 @@ class RegisterViewModel: ObservableObject {
             .map { self.validatePasswordDigit($0) }
             .assign(to: \.isPasswordDigitValid, on: self)
             .store(in: &cancellables)
+        
+        $password
+            .map { self.validatePasswordSpecialChar($0) }
+            .assign(to: \.isPasswordSpecialCharValid, on: self)
+            .store(in: &cancellables)
     }
     
     func emailEditingChanged(isEditing: Bool) {
@@ -86,12 +92,24 @@ class RegisterViewModel: ObservableObject {
         return password.contains(where: { $0.isNumber })
     }
     
+    private func validatePasswordSpecialChar(_ password: String) -> Bool {
+        let specialCharRegex = "[@$!%*?&]"
+        return password.range(of: specialCharRegex, options: .regularExpression) != nil
+    }
+    
     var isPasswordValid: Bool {
-        return isPasswordLengthValid && isPasswordUppercaseValid && isPasswordDigitValid
+        return isPasswordLengthValid && isPasswordUppercaseValid && isPasswordDigitValid && isPasswordSpecialCharValid
     }
     
     var isValid: Bool {
         return !firstName.isEmpty && !lastName.isEmpty && emailError.isEmpty && isPasswordValid
+    }
+    
+    func updatePasswordValidation() {
+        isPasswordLengthValid = validatePasswordLength(password)
+        isPasswordUppercaseValid = validatePasswordUppercase(password)
+        isPasswordDigitValid = validatePasswordDigit(password)
+        isPasswordSpecialCharValid = validatePasswordSpecialChar(password)
     }
     
     func validateAllFields() {

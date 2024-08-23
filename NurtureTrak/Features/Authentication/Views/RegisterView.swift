@@ -112,6 +112,7 @@ struct RegisterView: View {
             PasswordRequirementRow(isValid: viewModel.isPasswordLengthValid, text: "At least 8 characters")
             PasswordRequirementRow(isValid: viewModel.isPasswordUppercaseValid, text: "At least one uppercase letter")
             PasswordRequirementRow(isValid: viewModel.isPasswordDigitValid, text: "At least one digit")
+            PasswordRequirementRow(isValid: viewModel.isPasswordSpecialCharValid, text: "At least one special character (@$!%*?&)")
         }
     }
     
