@@ -15,8 +15,7 @@ struct CustomSecureField: View {
     var body: some View {
         SecureField(placeholder, text: $text)
             .padding()
-            .background(Color(.systemGray6))
-            .cornerRadius(10)
-            .padding(.horizontal, 40)
+            .background(Color(Color.gray.opacity(0.1)))
+            .cornerRadius(8)
     }
 }

@@ -16,8 +16,7 @@ struct CustomTextField: View {
         TextField(placeholder, text: $text)
             .autocapitalization(.none) // Prevents automatic capitalization
             .padding()
-            .background(Color(.systemGray6))
-            .cornerRadius(10)
-            .padding(.horizontal, 40)
+            .background(Color.gray.opacity(0.1))
+            .cornerRadius(8)
     }
 }
