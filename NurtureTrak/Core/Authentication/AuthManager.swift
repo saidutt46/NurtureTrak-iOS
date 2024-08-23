@@ -31,6 +31,10 @@ class AuthenticationManager: ObservableObject {
         await MainActor.run {
             self.user = response.user
             self.isAuthenticated = true
+            // Store user information in UserDefaults
+            UserDefaults.standard.set(response.user.firstName, forKey: "userFirstName")
+            UserDefaults.standard.set(response.user.lastName, forKey: "userLastName")
+            UserDefaults.standard.set(response.user.email, forKey: "userEmail")
         }
         
         tokenManager.saveTokens(accessToken: response.accessToken, refreshToken: response.refreshToken)

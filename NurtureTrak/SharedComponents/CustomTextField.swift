@@ -16,9 +16,10 @@ struct CustomTextField: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             TextField(placeholder, text: $text)
-                .autocapitalization(.none)
+                .textInputAutocapitalization(.never)
+                .disableAutocorrection(true)
                 .padding()
-                .background(Color.gray.opacity(0.1))
+                .background(Color(.systemGray6))
                 .cornerRadius(8)
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
@@ -26,12 +27,10 @@ struct CustomTextField: View {
                 )
             
             if !error.isEmpty {
-                HStack {
-                    Image(systemName: "exclamationmark.circle")
-                    Text(error)
-                }
-                .foregroundColor(.red)
-                .font(.caption)
+                Label(error, systemImage: "exclamationmark.circle")
+                    .foregroundColor(.red)
+                    .font(.caption)
+                    .accessibilityLabel("Error: \(error)")
             }
         }
     }

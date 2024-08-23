@@ -25,6 +25,8 @@ struct CustomSecureField: View {
                     }
                 }
                 .padding()
+                .textInputAutocapitalization(.never)
+                .disableAutocorrection(true)
                 .background(Color(UIColor.systemGray6))
                 .cornerRadius(8)
                 .overlay(

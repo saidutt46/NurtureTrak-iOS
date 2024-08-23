@@ -8,7 +8,7 @@
 import Foundation
 
 class NetworkManager {
-    private let baseURL = "http://localhost:3000/api"
+    private let baseURL = "http://192.168.1.80:3000/api"
     
     func sendRequest(to endpoint: APIEndpoint, method: HTTPMethod, body: [String: Any]? = nil, headers: [String: String]? = nil) async throws -> Data {
         guard let url = URL(string: baseURL + endpoint.path) else {
