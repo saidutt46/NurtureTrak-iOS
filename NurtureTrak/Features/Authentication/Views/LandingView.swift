@@ -13,7 +13,7 @@ struct LandingView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                LinearGradient(gradient: Gradient(colors: [Color(hex: "D9AFD9"), Color(hex: "97D9E1")]),
+                LinearGradient(gradient: Gradient(colors: [Color(hex: "0093E9"), Color(hex: "80D0C7")]),
                                startPoint: .top,
                                endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
